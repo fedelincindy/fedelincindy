@@ -1,0 +1,437 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(images/bgwallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.box
+{
+    padding: 20px 30px;
+    width: 300px;
+    height: 400px;
+    backdrop-filter: blur(50px);
+    border-radius: 5px;
+    background: rgba(49, 49, 49, .2);
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+.box .form
+{
+    padding: 10px 20px;
+}
+.box .form h2
+{
+    text-align: center;
+    color: #fff;
+}
+.box .form form
+{
+    margin-top: 50px;
+    align-items: center;
+}
+.box .form form .inputbox input
+{
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid #12151e;
+    margin-bottom: 30px;
+    color: #fff;
+}
+.box .form form .inputbox span
+{
+    position: absolute;
+    transform: translateY(-80px);
+    font-size: 14px;
+    color: #fff;
+}
+.box .form form .sub
+{
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: #0cc0df;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/*added css*/
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+/* Hidden menu styling */
+.menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background: rgba(49, 49, 49, .8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu ul li {
+    margin: 10px 0;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Show menu on hover */
+.hamburger:hover + .menu,
+.menu:hover {
+    display: block;
+}
+
+/*added css*/
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(49, 49, 49, 0.348);
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.link a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.link a:hover {
+    color: #0cc0df;
+}
+
+/* Hamburger Icon */
+.hamburg {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Dropdown Menu (Hidden by default) */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 15px;
+    background: rgba(49, 49, 49, 0.9);
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.dropdown .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dropdown .links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown .links a:hover {
+    color: #0cc0df;
+}
+
+/* Close icon for dropdown */
+.cancel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .links {
+        display: none; /* Hide main links */
+    }
+    .hamburg {
+        display: block; /* Show hamburger icon */
+    }
+    .dropdown.active {
+        display: block; /* Show dropdown on click */
+    }
+}
+/*css for textbox*/
+header h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+#new-task-form {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+#new-task-input,
+#due-date,
+#new-task-submit {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+#new-task-input {
+    flex: 1;
+    background-color: #374151;
+    color: #fff;
+    font-size: 1rem;
+}
+
+#new-task-input::placeholder {
+    color: #fcfdfe;
+}
+
+#due-date {
+    background-color: #374151;
+    color: #fff;
+    font-size: 1rem;
+}
+
+#new-task-submit {
+    background-color: #374151;
+    color: #fdfbfb;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#new-task-submit:hover {
+    background-color: #b676e7;
+}
+
+/* Task List Styling */
+.task-list {
+    padding: 1rem;
+}
+
+.task-list h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1f2937b9;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: #f6f3f3;
+}
+
+.task .content {
+    flex: 1;
+   
+}
+
+.task .actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.task .actions button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.task .actions .edit {
+    color: #060606;
+    background-color: #f3f3f560;
+}
+.task .actions .edit:hover {
+    background-color: #b676e7;
+}
+
+.task .actions .delete {
+    color: rgb(6, 6, 6);
+    background-color: #f3f3f560;
+}
+.task .actions .delete:hover{
+    background-color: #b676e7;
+}
+
+/* scrollview css */
+.scroll-container {
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto;  /* Adds vertical scroll */
+    border: 1px solid #ddd; /* Optional: Adds a border around the scrollable area */
+    padding: 10px; /* Optional: Adds padding inside the scrollable area */
+    margin-top: 20px; /* Optional: Adds margin at the top for spacing */
+}
+
+#tasks { 
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds spacing between each task */
+}
+
+
+/*class schedule css*/
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 220px; /* Aligns with sidebar width */
+    padding: 20px;
+    width: calc(100% - 220px);
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #EC4899;
+    font-size: 2rem;
+}
+
+/* Days of the Week Navigation */
+.days-nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.days-nav button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    color: white;
+    background-color: #1f2937;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.days-nav button:hover,
+.days-nav button:focus {
+    background-color: #b676e7;
+}
+
+/* Add Schedule Form */
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.controls .input-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.controls input {
+    padding: 10px;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.add-entry-btn {
+    padding: 10px 20px;
+    background-color: #1f2937;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.add-entry-btn:hover {
+    background-color: #b676e7;
+}
+
+/* Schedule Table */
+.schedule-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 70%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #1f2937;
+}
+
+table th {
+    background-color: #1f2937;
+    color: white;
+    font-weight: bold;
+}

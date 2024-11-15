@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <div class="form">
+            <h2>Login Form</h2>
+            <form id="loginForm">
+                <div class="inputbox">
+                    <input type="text" id="username" required>
+                    <span>Username</span>
+                </div>
+                <div class="inputbox">
+                    <input type="email" id="email" required>
+                    <span>E-mail</span>
+                </div>
+                <input type="submit" value="Submit" class="sub" id="submit">
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDsTKA_7-KHrz6QC8d5TyylEWNkqxf238Y",
+            authDomain: "todoapp-a36ff.firebaseapp.com",
+            databaseURL: "https://todoapp-a36ff-default-rtdb.firebaseio.com",
+            projectId: "todoapp-a36ff",
+            storageBucket: "todoapp-a36ff.appspot.com",
+            messagingSenderId: "302740800673",
+            appId: "1:302740800673:web:ddb9006abdca18fe7adce0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Event listener for form submission
+        document.getElementById("loginForm").addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form from submitting normally
+
+            // Get form input values
+            const username = document.getElementById("username").value.trim();
+            const email = document.getElementById("email").value.trim();
+
+            // Validate that all fields are filled
+            if (username && email) {
+                // Write data to Firebase
+                set(ref(db, 'users/' + username), {
+                    username: username,
+                    email: email,
+                }).then(() => {
+                    alert("Login Successful!");
+                    document.getElementById("loginForm").reset(); // Reset form after successful submission
+                    // Redirect to index.html after successful login
+                    window.location.href = "index.html";
+                }).catch((error) => {
+                    alert("Error: " + error.message);
+                });
+            } else {
+                alert("Please fill out all fields.");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo Application</title>
+</head>
+<body>
+    <nav>
+        <div class="links">
+            <div class="link"><a href="index.html">Home</a></div>
+            <div class="link"><a href="AcademicTask.html">Academic Tasks</a></div>
+            <div class="link"><a href="PersonalTask.html">Personal Tasks</a></div>
+            <div class="link"><a href="ClassSchedule.html">Class Schedule</a></div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="ToDoTask.html">To Do Tasks</a>
+                <a href="PersonalTask.html">Personal Tasks</a>
+                <a href="AcademicTask.html">Academic Tasks</a>
+                <a href="ClassSchedule.html">Class Schedule</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <header>
+            <h1>Class Schedule Planner</h1>
+        </header>
+
+        <!-- Days of the Week Navigation -->
+        <div class="days-nav">
+            <button onclick="selectDay('Monday')">Monday</button>
+            <button onclick="selectDay('Tuesday')">Tuesday</button>
+            <button onclick="selectDay('Wednesday')">Wednesday</button>
+            <button onclick="selectDay('Thursday')">Thursday</button>
+            <button onclick="selectDay('Friday')">Friday</button>
+            <button onclick="selectDay('Saturday')">Saturday</button>
+        </div>
+
+        <!-- Add Schedule Form and Controls -->
+        <div id="controls" class="controls">
+            <p>Adding schedule for <span id="selected-day">Monday</span></p>
+            <div class="input-group">
+                <input type="text" id="room-input" placeholder="Room Number">
+                <input type="text" id="teacher-input" placeholder="Teacher Name">
+                <input type="text" id="subject-input" placeholder="Subject">
+                <input type="text" id="time-input" placeholder="Time">
+                <button class="add-entry-btn" onclick="addEntry()">Add Schedule</button>
+            </div>
+        </div>
+
+        <!-- Schedule Table -->
+        <main class="schedule-container">
+            <table id="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Room Number</th>
+                        <th>Teacher</th>
+                        <th>Subject</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="schedule-body">
+                    <!-- Schedule entries will be dynamically added here -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <script src="schedule.js"></script>
+</body>
+</html>

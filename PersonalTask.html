@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Application</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav>
+        <div class="links">
+            <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
+            <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="AcademicTask.html">Academic Tasks</a></div>
+            <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="PersonalTask.html">Personal Tasks</a></div>
+            <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="ClassSchedule.html">Class Schedule</a></div>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <h1 id="task-type">Personal Tasks</h1>
+            <form id="new-task-form">
+                <input type="text" id="new-task-input" placeholder="What to do?" required />
+                <input type="datetime-local" id="due-date" required />
+                <input type="submit" id="new-task-submit" value="Add task" />
+            </form>
+        </header>
+
+        <section class="task-list">
+            <h2>Tasks</h2>
+            <div class="scroll-container">
+                <div id="tasks"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="personal.js" type="module"></script>
+</body>
+</html>
